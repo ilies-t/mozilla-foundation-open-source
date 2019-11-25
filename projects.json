@@ -1,0 +1,92 @@
+[
+    {
+        "id": 0,
+        "name": "Mozilla Firefox",
+        "categ": "Internet",
+        "desc": "Firefox is a Web browser that is smaller, faster, and in some ways more secure than the Mozilla browser from which much of its code was originally derived.",
+        "use": "https://www.mozilla.org/firefox/new",
+        "source": "https://github.com/mozilla/geckodriver",
+        "publicdomain": false
+    },
+    {
+        "id": 1,
+        "name": "Comon Voice",
+        "categ": "Developement",
+        "desc": "Common Voice is Mozilla's initiative to help teach machines how real people speak. But to create voice systems, developers need an extremely large amount of voice data.",
+        "use": "https://voice.mozilla.org",
+        "source": "https://github.com/mozilla/voice-web",
+        "publicdomain": true
+    },
+    {
+        "id": 2,
+        "name": "FileZilla",
+        "categ": "Developement",
+        "desc": "FileZilla Client is a fast and reliable cross-platform FTP, FTPS and SFTP client with lots of useful features and an intuitive graphical user interface.",
+        "use": "https://filezilla-project.org/download.php",
+        "source": "https://github.com/basvodde/filezilla",
+        "publicdomain": true
+    },
+    {
+        "id": 3,
+        "name": "Rust",
+        "categ": "Developement",
+        "desc": "A language empowering everyone to build reliable and efficient software.",
+        "use": "https://www.rust-lang.org/tools/install",
+        "source": "https://github.com/rust-lang/rust",
+        "publicdomain": true
+    },
+    {
+        "id": 4,
+        "name": "KeePass",
+        "categ": "Security",
+        "desc": "KeePass is a free open source password manager, which helps you to manage your passwords in a secure way. You can put all your passwords in one database, which is locked with one master key or a key file.",
+        "use": "https://keepass.info/",
+        "source": "https://github.com/keepassx/keepassx",
+        "publicdomain": true
+    },
+    {
+        "id": 5,
+        "name": "Mozilla Thunderbird",
+        "categ": "Email",
+        "desc": "Thunderbird is a free and open source email, newsfeed, chat, and calendaring client, that\u2019s easy to set up and customize.",
+        "use": "https://www.thunderbird.net/",
+        "source": "https://github.com/flathub/org.mozilla.Thunderbird",
+        "publicdomain": false
+    },
+    {
+        "id": 6,
+        "name": "PDF.js",
+        "categ": "Design",
+        "desc": "PDF.js is community-driven and supported by Mozilla Labs. Our goal is to create a general-purpose, web standards-based platform for parsing and rendering PDFs.",
+        "use": "https://mozilla.github.io/pdf.js",
+        "source": "https://github.com/mozilla/pdf.js",
+        "publicdomain": false
+    },
+    {
+        "id": 7,
+        "name": "Firefox Monitor",
+        "categ": "Security",
+        "desc": "Firefox Monitor warns you if your online accounts were involved in a known data breach. See if your information was exposed in a data breach.",
+        "use": "https://monitor.firefox.com/",
+        "source": "https://github.com/mozilla/blurts-server",
+        "publicdomain": true
+    },
+    {
+        "id": 8,
+        "name": "Spoke",
+        "categ": "Design",
+        "desc": "Explore images, videos, and 3D models from around the web, all without opening up a new tab. With media integrations from Sketchfab and Google Poly, you'll be on your way to creating a scene in no time.",
+        "use": "https://hubs.mozilla.com/spoke",
+        "source": "https://github.com/mozilla/Spoke",
+        "publicdomain": true
+    },
+    {
+        "id": 9,
+        "name": "apps-design",
+        "categ": "Design",
+        "desc": "Design Guidelines for Open Web Apps.",
+        "use": "https://github.com/mozilla/apps-design",
+        "source": "https://github.com/mozilla/apps-design",
+        "publicdomain": true
+    }
+]

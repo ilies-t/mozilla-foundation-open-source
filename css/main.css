@@ -1,0 +1,28 @@
+/* reset */
+@import './reset.css';
+
+/* fonts */
+@import './fonts/fonts.css';
+
+/* ———————————————— general ———————————————— */
+/* colors */
+:root {
+    --primary: #FFF;
+    --secondary: #000;
+}
+
+/* text */
+h1 { }
+h2 { }
+h3 { }
+
+/* others */
+
+/* ———————————————— home ———————————————— */
+/* header */
+/* main */
+/* what is open-source */
+/* here some tools */
+/* footer */
+/* mobile */
+@media screen and (orientation:portrait) { }
