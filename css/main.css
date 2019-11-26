@@ -17,7 +17,9 @@ h2 { }
 p { }
 
 /* others */
-
+body {
+    padding: 0px 20px;
+}
 /* ———————————————— home ———————————————— */
 /* header */
 /* main */
