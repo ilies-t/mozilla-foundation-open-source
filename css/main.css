@@ -12,7 +12,19 @@
 }
 
 /* text */
-h1 { }
+h1 {
+    position: absolute;
+    top: 25%;
+    left: 4%;
+    display: inline-block;
+    font-family: 'Zilla Slab';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 120px;
+}
+h1 > span {
+    background: var(--primary);
+}
 h2 { }
 p{
     margin-top: 2.5%;
@@ -24,13 +36,76 @@ p{
 }
 
 /* others */
-
 section{
     margin-top: 100px;
 }
+
+.padding-default {
+    padding: 0px 5%;
+}
+
 /* ———————————————— home ———————————————— */
 /* header */
+header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    padding: 0px 5%;
+    z-index: 999;
+}
+
 /* main */
+main {
+    width: 100%;
+    height: 100%;
+}
+div.main-content {
+    position: relative;
+    width: 100%;
+    height: 86%;
+}
+img#main-absolute-image {
+    position: absolute;
+    bottom: 0px;
+    right: 15%;
+    z-index: -1;
+    max-height: 90%;
+    max-width: 100%;
+}
+.button-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 14%;
+}
+.button-container > a {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+}
+.button-container > a > span {
+    font-family: 'Zilla Slab';
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 15%;
+    color: var(--secondary);
+}
+.button-container > a > img {
+    height: 30px;
+    margin-top: 10%;
+    transition-duration: .2s;
+}
+
+.button-container > a:hover > img{
+    margin-top: 15%;
+}
 /* what is open-source */
 iframe{
     width: 100%;
@@ -41,5 +116,71 @@ iframe{
     width: 100%;
 }
 /* footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    padding: 100px 0px;
+    background: var(--secondary);
+}
+footer > * {
+    color: var(--primary);
+}
+#mozilla-footer-logo {
+    width: 100px;
+}
+footer > a {
+    font-family: 'Zilla Slab';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    text-decoration: underline;
+}
+footer > a:hover {
+    text-decoration: none;
+}
+#footer-icons {
+    display: flex;
+    flex-flow: row nowrap;
+}
+#footer-icons > a {
+    display: flex;
+    justify-content: space-around;
+    vertical-align: middle;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 0px 5px;
+}
+#footer-icons > a:hover {
+    opacity: 0.25;
+}
+#footer-icons > a > img {
+    max-height: 100%;
+    max-width: 100%;
+    align-content: center;
+    vertical-align: middle;
+}
 /* mobile */
-@media screen and (orientation:portrait) { }
+@media screen and (orientation:portrait) {
+    /* text */
+    h1 {
+        font-size: 14vw;
+    }
+    img#main-absolute-image {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* other screens */
+@media screen and (max-height:500px) {
+    h1 {
+        font-size: 18vh;
+    }
+    div.main-content {
+        height: 75%;
+    }
+}

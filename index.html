@@ -8,15 +8,23 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
-    <!-- main -->
+    <!-- header -->
     <header>
         <img src="./dist/images/icons/mozilla-1.svg" alt="">
     </header>
 
     <!-- main -->
-    <main>
-
-        <h1>Example</h1>
+    <main class="padding-default">
+        <div class="main-content">
+            <h1><span>We trust in</span><br><span>Open-source.</span></h1>
+            <img id="main-absolute-image" src="./dist/images/interface/home_illustration.png" alt="">
+        </div>
+        <div class="button-container">
+            <a href="#first-section">
+                <span>Discover</span>
+                <img src="./dist/images/icons/scroll.svg" alt="scrollable">
+            </a>
+        </div>
     </main>
 
     <!-- what is open-source -->
@@ -39,11 +47,24 @@
             <h2>About us</h2>
             <p>Open source products include permission to use the source code, design documents, or content of the product. It most commonly refers to the open-source model, in which open-source software or other products are released under an open-source license as part of the open-source-software movement. Use of the term originated with software, but has expanded beyond the software sector to cover other open content and forms of open collaboration.</p>
         </div>
-        <div style="background-image: url('.../dist/images/interface/about_us.png');">
+        <div style="background-image: url('./dist/images/interface/about_us.png');">
     </section>
 
     <!-- footer -->
     <footer>
+        <img id="mozilla-footer-logo" src="./dist/images/icons/mozilla-2.svg" alt="Mozilla Logo">
+        <a href="https://foundation.mozilla.org/" target="_blank" rel="noopener noreferrer">Read more about Mozilla Foundation</a>
+        <div id="footer-icons">
+            <a href="https://twitter.com/mozilla" target="_self" rel="noopener noreferrer">
+                <img src="./dist/images/brands/twitter.svg" alt="Twitter logo">
+            </a>
+            <a href="https://github.com/mozilla" target="_self" rel="noopener noreferrer">
+                <img src="./dist/images/brands/github.svg" alt="GitHub logo">
+            </a>
+            <a href="https://www.instagram.com/mozilla/" target="_self" rel="noopener noreferrer">
+                <img src="./dist/images/brands/instagram.svg" alt="Instagram logo">
+            </a>
+        </div>
     </footer>
 </body>
 <script type="text/javascript" src="./js/index.js"></script>
