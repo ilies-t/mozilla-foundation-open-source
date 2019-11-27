@@ -14,15 +14,32 @@
 /* text */
 h1 { }
 h2 { }
-p { }
+p{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+.contenant{
+    display: flex;
+    flex-direction: column;
+}
 
 /* others */
 
+section{
+    margin-top: 100px;
+}
 /* ———————————————— home ———————————————— */
 /* header */
 /* main */
 /* what is open-source */
+iframe{
+    width: 100%;
+}
 /* here some tools */
+/* about us */
+.background-image{
+    width: 100%;
+}
 /* footer */
 /* mobile */
 @media screen and (orientation:portrait) { }
