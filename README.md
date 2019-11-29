@@ -6,6 +6,6 @@
 2 = Lead
 ```
 | Name    | Integration | Design | Animation JS | Pull request
-| :---    | :---:       | :--:   | :---:        | :--
-| Ilies   | 2           | 1      | 2            | 1
+| :---    | :---:       | :--:   | :---:        | :--:
+| Ilies   | 2           | 1      | 2            | 2
 | P-E     | 2           | 2      | 1            | 1

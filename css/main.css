@@ -25,10 +25,19 @@ h1 {
 h1 > span {
     background: var(--primary);
 }
-h2 { }
+h2 {
+    font-family: 'Zilla Slab';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 32px;
+}
 p{
+    font-family: 'Zilla Slab';
+    font-weight: 500;
+    font-style: normal;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
+    font-size: 22px;
 }
 .contenant{
     display: flex;
@@ -37,7 +46,7 @@ p{
 
 /* others */
 section{
-    margin-top: 100px;
+    margin-top: 75px;
 }
 
 .padding-default {
@@ -111,6 +120,10 @@ iframe{
     width: 100%;
 }
 /* here some tools */
+.categorize-of-projects {
+
+}
+
 /* about us */
 .background-image{
     width: 100%;
