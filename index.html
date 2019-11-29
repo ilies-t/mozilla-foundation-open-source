@@ -39,14 +39,23 @@
     <!-- here some tools -->
     <section class="padding-default">
         <h2>Here some open-source tools</h2>
-        <ul class="categorize-of-projects">
-            <li class="active">All</li>
-            <li class="active">Design</li>
-            <li class="active">Internet</li>
-            <li class="active">Developement</li>
-            <li class="active">Security</li>
-            <li class="active">E-mail</li>
-        </ul>
+        <div class="categorize-of-projects">
+            <ul>
+                <li class="active">All</li>
+                <li>Design</li>
+                <li>Internet</li>
+                <li>Developement</li>
+                <li>Security</li>
+                <li>E-mail</li>
+            </ul>
+            <div class="categorize-of-projects-bar">
+                <div id="activate-categorize-of-projects-bar"></div>
+            </div>
+        </div>
+        <form action="./send_post.php" class="search">
+            <img src="./dist/images/icons/search.svg" alt="">
+            <input type="text" placeholder="Research a tool...">
+        </form>
     </section>
 
     <!-- about us -->
@@ -75,5 +84,7 @@
         </div>
     </footer>
 </body>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-6b5a616d-a97d-4d30-9a15-53be88f46e62"></div>
 <script type="text/javascript" src="./js/index.js"></script>
 </html>

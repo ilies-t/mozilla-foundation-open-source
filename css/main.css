@@ -30,12 +30,12 @@ h2 {
     font-weight: bold;
     font-style: normal;
     font-size: 32px;
+    margin-bottom: 2.5%;
 }
 p{
     font-family: 'Zilla Slab';
     font-weight: 500;
     font-style: normal;
-    margin-top: 2.5%;
     margin-bottom: 2.5%;
     font-size: 22px;
 }
@@ -120,8 +120,22 @@ iframe{
     width: 100%;
 }
 /* here some tools */
-.categorize-of-projects {
+div.categorize-of-projects {
+    width: fit-content;
+}
 
+div.categorize-of-projects > ul {
+    display: inline-flex;
+    width: 100%;
+}
+
+div.categorize-of-projects > ul > li {
+    font-family: 'Zilla Slab';
+    font-weight: 600;
+    font-style: normal;
+    list-style-type: none;
+    padding: 10px 20px;
+    font-size: 15px;
 }
 
 /* about us */
