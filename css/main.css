@@ -9,6 +9,10 @@
 :root {
     --primary: #FFF;
     --secondary: #000;
+    --tertiary: #e7e5e2;
+    --quaternary: #00FFFF;
+    --quinary: #FFF44F;
+    --senary: #54FFBD;
 }
 
 /* text */
@@ -22,7 +26,7 @@ h1 {
     font-style: normal;
     font-size: 120px;
 }
-h1 > span {
+h1 span, h3.TBfont {
     background: var(--primary);
 }
 h2 {
@@ -30,14 +34,24 @@ h2 {
     font-weight: bold;
     font-style: normal;
     font-size: 32px;
-    margin-bottom: 2.5%;
+    margin-bottom: 15px;
 }
-h3{
-    font-family: Zilla Slab;
+h3:not(.TBfont) {
+    font-family: 'Zilla Slab';
     font-style: normal;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 30px;
+}
+h3.TBfont {
+    font-size: 120px;
+    width: fit-content;
+}
+h4 {
+    font-family: 'Zilla Slab';
+    font-weight: normal;
+    font-style: italic;
+    font-size: 19px;
 }
 p{
     font-family: 'Zilla Slab';
@@ -52,8 +66,11 @@ p{
 }
 
 /* others */
+.main-text-effect-container {
+    overflow: hidden;
+}
 section{
-    margin-bottom: 75px;
+    margin-bottom: 50px;
 }
 .padding-default {
     padding: 0px 5%;
@@ -61,8 +78,26 @@ section{
 .card-default-properties {
     background: var(--primary);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    padding: 30px;
     border-radius: 45px;
+    transition-duration: .3s;
 }
+.categorize-bar {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 4px;
+    background: var(--tertiary);
+    transition-duration: .5s;
+}
+.stars-container > img {
+    height: 22.5px;
+}
+.stars-container > .star-off {
+    opacity: 0.15;
+}
+.smoothanim { transition-duration: .6s; }
 
 /* ———————————————— home ———————————————— */
 /* header */
@@ -134,19 +169,103 @@ iframe{
 
 /* here some tools */
 div.categorize-of-projects {
-    width: fit-content;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    margin-bottom: 30px;
 }
 div.categorize-of-projects > ul {
     display: inline-flex;
+    justify-content: space-between;
     width: 100%;
 }
 div.categorize-of-projects > ul > li {
+    position: relative;
+    width: inherit;
+    padding: 15px 0px;
+    color: var(--tertiary);
     font-family: 'Zilla Slab';
     font-weight: 600;
     font-style: normal;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
     list-style-type: none;
-    padding: 10px 20px;
-    font-size: 15px;
+    transition-duration: .3s;
+}
+#child-categbar {
+    width: 0px;
+    background: var(--secondary);
+}
+/* event for :hover block */
+div.categorize-of-projects > ul > li:hover {
+    cursor: pointer;
+}
+div.categorize-of-projects > ul > li:hover {
+    color: var(--secondary);
+}
+/* event ".active" for activated block */
+div.categorize-of-projects > ul > li.active {
+    color: var(--secondary);
+}
+/* search */
+.search-block {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    height: 65px;
+}
+.search-block > img {
+    max-width: 90%;
+    max-height: 90%;
+}
+.search-block > input {
+    font-family: 'Zilla Slab';
+    font-weight: normal;
+    font-style: italic;
+    font-size: 20px;
+    width: 100%;
+    margin-left: 25px;
+    padding: 15px 0px;
+}
+.projects-container {
+    display: -webkit-inline-box;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 10px;
+    margin-top: 35px;
+    padding-bottom: 20px;
+}
+.card-project {
+    width: 350px;
+    height: 100%;
+    margin-right: 30px;
+}
+.card-project > div:first-of-type {
+    display: inline-flex;
+    align-items: center;
+}
+.card-project > h4 {
+    margin-top: 20px;
+    height: 150px;
+    font-size: 19px;
+}
+.card-project > div:first-of-type > img {
+    height: 40px;
+}
+.card-project > div:first-of-type > .card-title-content {
+    margin-left: 15px;
+}
+.card-project > div:first-of-type > .card-title-content > h3 {
+
+}
+.card-project > div:first-of-type > .card-title-content> div.stars-container {
+
 }
 
 /* overlay popup */
@@ -219,18 +338,31 @@ footer > a:hover {
 /* mobile */
 @media screen and (orientation:portrait) {
     /* text */
-    h1 {
+    h1, h3.TBfont {
         font-size: 14vw;
     }
     img#main-absolute-image {
         right: 50%;
         transform: translateX(50%);
     }
+    /* others */
+    section{
+        margin-bottom: 35px;
+    }
+    /* here some tools */
+    div.categorize-of-projects > ul {
+        display: flex;
+        flex-flow: row wrap;
+        width: auto;
+    }
+    #parent-categbar, #child-categbar {
+        display: none;
+    }
 }
 
 /* other screens */
 @media screen and (max-height:500px) {
-    h1 {
+    h1, h3.TBfont {
         font-size: 18vh;
     }
     div.main-content {
