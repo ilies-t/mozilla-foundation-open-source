@@ -30,12 +30,19 @@ h2 {
     font-weight: bold;
     font-style: normal;
     font-size: 32px;
+    margin-bottom: 2.5%;
+}
+h3{
+    font-family: Zilla Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
 }
 p{
     font-family: 'Zilla Slab';
     font-weight: 500;
     font-style: normal;
-    margin-top: 2.5%;
     margin-bottom: 2.5%;
     font-size: 22px;
 }
@@ -46,11 +53,15 @@ p{
 
 /* others */
 section{
-    margin-top: 75px;
+    margin-bottom: 75px;
 }
-
 .padding-default {
     padding: 0px 5%;
+}
+.card-default-properties {
+    background: var(--primary);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 45px;
 }
 
 /* ———————————————— home ———————————————— */
@@ -71,6 +82,7 @@ header {
 main {
     width: 100%;
     height: 100%;
+    margin-bottom: 40px;
 }
 div.main-content {
     position: relative;
@@ -111,23 +123,50 @@ img#main-absolute-image {
     margin-top: 10%;
     transition-duration: .2s;
 }
-
 .button-container > a:hover > img{
     margin-top: 15%;
 }
+
 /* what is open-source */
 iframe{
     width: 100%;
 }
-/* here some tools */
-.categorize-of-projects {
 
+/* here some tools */
+div.categorize-of-projects {
+    width: fit-content;
+}
+div.categorize-of-projects > ul {
+    display: inline-flex;
+    width: 100%;
+}
+div.categorize-of-projects > ul > li {
+    font-family: 'Zilla Slab';
+    font-weight: 600;
+    font-style: normal;
+    list-style-type: none;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+/* overlay popup */
+.bg-fullscreen{
+    background: rgba(0, 0, 0, 0.15);
+    height: 100%;
+    width: 100%;
+}
+.card-box {
+    background-color: white;
 }
 
 /* about us */
-.background-image{
+.bg-image {
     width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center center;
 }
+
 /* footer */
 footer {
     display: flex;
@@ -176,6 +215,7 @@ footer > a:hover {
     align-content: center;
     vertical-align: middle;
 }
+
 /* mobile */
 @media screen and (orientation:portrait) {
     /* text */
