@@ -10,7 +10,7 @@
     },
     {
         "id": 1,
-        "name": "Comon Voice",
+        "name": "Common Voice",
         "categ": "Developement",
         "desc": "Common Voice is Mozilla's initiative to help teach machines how real people speak. But to create voice systems, developers need an extremely large amount of voice data.",
         "use": "https://voice.mozilla.org",
