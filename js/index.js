@@ -59,7 +59,27 @@ const setAttributeToActive = () => {
     let _activeClass = getActiveLi();
     childBar.setAttribute( "style", `width: ${_activeClass.clientWidth}px; left: ${_activeClass.offsetLeft}px;`);
 };
+
 setAttributeToActive();
+
+// click event
+const verify = () => {
+    // apply filter on research
+    allCards.forEach(card => {
+        /*
+        ** '0' is all category and 'card.dataset.cardcateg' is chosen category
+        ** example: user click in 'internet' (3rd category), verify if chosen category is equal to '2' or '0'
+        **          if is equal to '2' === add display: block
+        **          else add display: none
+        ** example: user click on 'all' (1st category), verify is dataset-categ of active li is equal to '0'
+        **          if activeLi is === '0' add display: block
+        **          else add display: none
+        */
+        const arrOfActiveTrue = ['0', card.dataset.cardcateg];
+        // so, verify card if she have '0' or chosen category
+        card.style.display = (arrOfActiveTrue.includes(getActiveLi().dataset.categ)) ? 'block' : 'none';
+    });
+};
 
 allLi.forEach(li => {
     // mouse enter
@@ -72,35 +92,34 @@ allLi.forEach(li => {
         setAttributeToActive();
     });
 
-    // click event
     li.addEventListener('click', e => {
         // add 'active' class to selected
         getActiveLi().classList.remove('active');
         li.classList.add('active');
-
-        // change research input
-        categChosenSentence = (getActiveLi().innerHTML === 'All') ? '' : ' ' + getActiveLi().innerHTML.toLowerCase();
-        $('.search-block.card-default-properties > input').placeholder = `Research a${categChosenSentence} tool...`;
-
-        // apply filter on research
-        allCards.forEach(card => {
-            /*
-            ** '0' is all category and 'card.dataset.cardcateg' is chosen category
-            ** example: user click in 'internet' (3rd category), verify if chosen category is equal to '2' or '0'
-            **          if is equal to '2' === add display: block
-            **          else add display: none
-            ** example: user click on 'all' (1st category), verify is dataset-categ of active li is equal to '0'
-            **          if activeLi is === '0' add display: block
-            **          else add display: none
-            */
-            const arrOfActiveTrue = ['0', card.dataset.cardcateg];
-            // so, verify card if she have '0' or chosen category
-            card.style.display = (arrOfActiveTrue.includes(getActiveLi().dataset.categ)) ? 'block' : 'none';
-        });
+        verify();
     })
 });
 
 // ---------------------------------------- research input ----------------------------------------
 const formSubmit = () => {
-    alert($('form.search-block.card-default-properties > input').value);
+    getActiveLi().classList.remove('active');
+    const activeCateg = $('div.categorize-of-projects > ul > li')[0];
+    activeCateg.className = 'active';
+    verify();
+    setAttributeToActive();
+    // this is a test
+    const allBlocks = [];
+    $('.card-project.card-default-properties').forEach(block => {
+        allBlocks.push(block);
+    });
+    const word = $('form.search-block.card-default-properties > input').value;
+    let result, textInBlock;
+    allBlocks.forEach(block => {
+        // parent > div.card-title-content > h3
+        textInBlock = block.children[0].children[1].children[0].innerHTML;
+        // use algorien to have to % similarity between research word and block h3 value
+        result = algorien.search(word, textInBlock);
+        block.style.display = (result >= 35.01) ? 'block' : 'none';
+    });
+    // if contain no result
 }
