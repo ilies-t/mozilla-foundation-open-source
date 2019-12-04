@@ -17,7 +17,7 @@
         "use": "https://voice.mozilla.org",
         "source": "https://github.com/mozilla/voice-web",
         "publicdomain": true,
-        "alternative": "",
+        "alternative": "Google Cloud Speech-to-Text",
     },
     {
         "id": 2,
@@ -67,7 +67,7 @@
         "use": "https://mozilla.github.io/pdf.js",
         "source": "https://github.com/mozilla/pdf.js",
         "publicdomain": false,
-        "alternative": "",
+        "alternative": "ViewerJs",
     },
     {
         "id": 7,
@@ -97,6 +97,6 @@
         "use": "https://github.com/mozilla/apps-design",
         "source": "https://github.com/mozilla/apps-design",
         "publicdomain": true,
-        "alternative": "",
+        "alternative": "Material design",
     }
 ]
