@@ -53,6 +53,12 @@ h4 {
     font-style: italic;
     font-size: 19px;
 }
+h5 {
+    font-family: 'Zilla Slab';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 15px;
+}
 p{
     font-family: 'Zilla Slab';
     font-weight: 500;
@@ -63,6 +69,66 @@ p{
 .contenant{
     display: flex;
     flex-direction: column;
+}
+
+/* buttons */
+button, .button-1, .button-2, .button-3 {
+    position: relative;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0px;
+    width: 120px;
+    background: var(--secondary);
+    border-radius: 45px;
+    font-family: 'Zilla Slab';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 17.5px;
+    cursor: pointer;
+    border: 2px solid var(--secondary);
+}
+.button-1 {
+    color: var(--primary);
+    background: var(--secondary);
+}
+.button-2 {
+    color: var(--secondary);
+    background: var(--primary);
+}
+.button-3 {
+    color: var(--primary);
+    background: none;
+    border-color: var(--primary);
+}
+button::after, .button-1::after, .button-2::after, .button-3::after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    margin-top: 2.5px;
+    margin-left: -15px;
+    background-image: url('../dist/images/icons/rightArrow.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.1);
+    filter: invert(1);
+    transition: .3s ease-in-out;
+}
+.button-2::after {
+    filter: invert(0);
+}
+button:hover::after, .button-1:hover::after, .button-2:hover::after, .button-3:hover::after {
+    opacity: 1;
+    visibility: visible;
+    margin-left: 5px;
+    transform: scale(1);
 }
 
 /* others */
@@ -78,7 +144,7 @@ section{
 .card-default-properties {
     background: var(--primary);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-    padding: 30px;
+    padding: 25px;
     border-radius: 45px;
     transition-duration: .3s;
 }
@@ -98,6 +164,21 @@ section{
     opacity: 0.15;
 }
 .smoothanim { transition-duration: .6s; }
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+}
 
 /* ———————————————— home ———————————————— */
 /* header */
@@ -132,19 +213,19 @@ img#main-absolute-image {
     max-height: 90%;
     max-width: 100%;
 }
-.button-container {
+.button-container-main {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     width: 100%;
     height: 14%;
 }
-.button-container > a {
+.button-container-main > a {
     display: flex;
     flex-flow: column nowrap;
     align-content: center;
 }
-.button-container > a > span {
+.button-container-main > a > span {
     font-family: 'Zilla Slab';
     font-weight: bold;
     font-style: normal;
@@ -153,12 +234,12 @@ img#main-absolute-image {
     margin-top: 15%;
     color: var(--secondary);
 }
-.button-container > a > img {
+.button-container-main > a > img {
     height: 30px;
     margin-top: 10%;
     transition-duration: .2s;
 }
-.button-container > a:hover > img{
+.button-container-main > a:hover > img{
     margin-top: 15%;
 }
 
@@ -235,14 +316,23 @@ div.categorize-of-projects > ul > li.active {
 }
 .projects-container {
     display: -webkit-inline-box;
+    position: relative;
     width: 100%;
-    overflow-x: scroll;
     padding: 10px;
     margin-top: 35px;
     padding-bottom: 20px;
+    overflow-x: scroll;
+}
+.project-container-border-effect {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 75px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 .card-project {
-    width: 350px;
+    width: 320px;
     height: 100%;
     margin-right: 30px;
 }
@@ -251,9 +341,13 @@ div.categorize-of-projects > ul > li.active {
     align-items: center;
 }
 .card-project > h4 {
-    margin-top: 20px;
-    height: 150px;
+    margin-top: 10px;
+    height: 145px;
     font-size: 19px;
+    overflow: hidden;
+}
+.card-project > h5 {
+    margin-top: 20px;
 }
 .card-project > div:first-of-type > img {
     height: 40px;
@@ -261,11 +355,25 @@ div.categorize-of-projects > ul > li.active {
 .card-project > div:first-of-type > .card-title-content {
     margin-left: 15px;
 }
-.card-project > div:first-of-type > .card-title-content > h3 {
-
+.card-project > div.is-pd {
+    display: inline-flex;
+    align-items: center;
 }
-.card-project > div:first-of-type > .card-title-content> div.stars-container {
-
+.card-project > div.is-pd > img {
+    height: 25px;
+}
+.card-project > div.is-pd > span {
+    font-family: 'Zilla Slab';
+    font-weight: 600;
+    font-style: italic;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.card-project > div.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    max-width: 350px;
 }
 
 /* overlay popup */
@@ -357,6 +465,15 @@ footer > a:hover {
     }
     #parent-categbar, #child-categbar {
         display: none;
+    }
+    .card-project {
+        width: 280px;
+    }
+    .card-project > h4 {
+        height: 175px;
+    }
+    .project-container-border-effect {
+        width: 35px;
     }
 }
 
