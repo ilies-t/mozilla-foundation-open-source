@@ -4,6 +4,9 @@ const $ = (_x) => {
     return (_selected.length <= 1) ? (_selected[0]) : _selected;
 }
 
+// smooth scroll
+var scroll = new SmoothScroll('a[href*="#"]');
+
 // --------------------------------------- main text effect ---------------------------------------
 // function resize textPapa by textChild height and return textPapa height
 const resizeParentBySize = (_textChild, _textPapa) => {

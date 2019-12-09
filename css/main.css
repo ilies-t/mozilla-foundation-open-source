@@ -44,7 +44,7 @@ h3:not(.TBfont) {
     line-height: 30px;
 }
 h3.TBfont {
-    font-size: 120px;
+    font-size: 115px;
     width: fit-content;
 }
 h4 {
@@ -452,6 +452,10 @@ footer > a:hover {
     img#main-absolute-image {
         right: 50%;
         transform: translateX(50%);
+    }
+    /* buttons */
+    button, .button-1, .button-2, .button-3 {
+        width: 110px;
     }
     /* others */
     section{
