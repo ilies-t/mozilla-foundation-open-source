@@ -37,16 +37,6 @@ setTimeout(() => {
     anim();
 }, 2500);
 
-// resize automatically the height of text parent
-window.onload = (() => {
-    resizeParentBySize($('.TBfont')[0], $('.TBfont')[0].parentNode);
-});
-
-// when user resize window, recalculate the height of fontSize
-window.onresize = (() => {
-    resizeParentBySize($('.TBfont')[0], $('.TBfont')[0].parentNode);
-});
-
 // ------------------------------------------- research -------------------------------------------
 const childBar = $('#child-categbar'),
       allLi = $('div.categorize-of-projects > ul > li'),
@@ -100,6 +90,8 @@ allLi.forEach(li => {
         getActiveLi().classList.remove('active');
         li.classList.add('active');
         verify();
+        // remove "no results" if there are result
+        $('#no-result-message').classList.remove('on');
     })
 });
 
@@ -111,7 +103,7 @@ const formSubmit = () => {
     verify();
     setAttributeToActive();
     // this is a test
-    const allBlocks = [];
+    const allBlocks = [], allBlockDisplay = [];
     $('.card-project.card-default-properties').forEach(block => {
         allBlocks.push(block);
     });
@@ -120,9 +112,26 @@ const formSubmit = () => {
     allBlocks.forEach(block => {
         // parent > div.card-title-content > h3
         textInBlock = block.children[0].children[1].children[0].innerHTML;
-        // use algorien to have to % similarity between research word and block h3 value
+        // use algorien to have % similarity between research word and block h3 value
         result = algorien.search(word, textInBlock);
-        block.style.display = (result >= 35.01) ? 'block' : 'none';
+        // if similarity is superior to 15%, block will have 'block' display
+        block.style.display = (result >= 15.01) ? 'block' : 'none';
+        allBlockDisplay.push(block.style.display);
     });
-    // if contain no result
+
+    // display "no result"
+    allBlockDisplay.every((x) => {return x === "none"}) ? $('#no-result-message').classList.add('on') : $('#no-result-message').classList.remove('on');
 }
+
+// --------------------------------------- window functions ---------------------------------------
+window.onload = (() => {
+    resizeParentBySize($('.TBfont')[0], $('.TBfont')[0].parentNode);
+    setTimeout(() => {
+        $('header').classList.remove('onload');
+        $('body').classList.remove('block-scroll');
+        $('div#loader-container').classList.add('off-load');
+    }, 750);
+});
+window.onresize = (() => {
+    resizeParentBySize($('.TBfont')[0], $('.TBfont')[0].parentNode);
+});
