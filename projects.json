@@ -16,7 +16,7 @@
         "id": 1,
         "name": "Common Voice",
         "filename": "common-voice.svg",
-        "categ": "Developement",
+        "categ": "Internet",
         "datacardcateg": 2,
         "review": 5,
         "desc": "Common Voice is Mozilla's initiative to help teach machines how real people speak. But to create voice systems, developers need an extremely large amount of voice data.",
