@@ -2,7 +2,7 @@
 This One page give a little presentation of what is open-source, presents some open-source tools, etc...
 # Installation
 <p align="center">
-    <img src="https://media.giphy.com/media/iqH4z3L6lCVuiomRUe/source.gif" style="width: 40%" alt=""></img>
+  <img src="https://media.giphy.com/media/iqH4z3L6lCVuiomRUe/giphy.gif" width="40%" />
 </p>
 
 # Contributors

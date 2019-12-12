@@ -5,7 +5,7 @@ const $ = (_x) => {
 }
 
 // smooth scroll
-var scroll = new SmoothScroll('a[href*="#"]');
+const scroll = new SmoothScroll('a[href*="#"]');
 
 // --------------------------------------- main text effect ---------------------------------------
 // function resize textPapa by textChild height and return textPapa height
@@ -19,16 +19,15 @@ const resizeParentBySize = (_textChild, _textPapa) => {
 // NOTE : avoid vw & vh in CSS or consequences
 let y = 0;
 const anim = () => {
-    // start this animation after 2sec
-    setTimeout(anim, 2500);
+    // start this animation after 3sec
+    setTimeout(anim, 3000);
     const textChild = $('.TBfont')[0];
     const textParent = textChild.parentNode;
 
     // get block height and add forEach += this.height
     const heightOfBlock = resizeParentBySize(textChild, textParent);
 
-    // if y is superior to text container height, this reloop
-    // remove 'smoothanim' class to avoid animation effect when reloop
+    // if Y is superior to text container height, this reloop
     y = (y < heightOfBlock*(textParent.childElementCount - 1)) ? y += heightOfBlock : 0;
     textParent.style.transform = (`transform`, `translateY(-${y}px)`);
 }
@@ -47,20 +46,19 @@ const getActiveLi = () => {
     return $('div.categorize-of-projects > ul > li.active');
 }
 
-// set childBar attribute to 'active' li
-const setAttributeToActive = () => {
+// adapat the childBar with to 'active' li
+const setBarStyle = () => {
     let _activeClass = getActiveLi();
     childBar.setAttribute( "style", `width: ${_activeClass.clientWidth}px; left: ${_activeClass.offsetLeft}px;`);
 };
-
-setAttributeToActive();
+setBarStyle();
 
 // click event
-const verify = () => {
+const verifyWithFilter = () => {
     // apply filter on research
     allCards.forEach(card => {
         /*
-        ** '0' is all category and 'card.dataset.cardcateg' is chosen category
+        ** '0' is all category and 'card.dataset.cardcateg' is card data category
         ** example: user click in 'internet' (3rd category), verify if chosen category is equal to '2' or '0'
         **          if is equal to '2' === add display: block
         **          else add display: none
@@ -69,39 +67,56 @@ const verify = () => {
         **          else add display: none
         */
         const arrOfActiveTrue = ['0', card.dataset.cardcateg];
-        // so, verify card if she have '0' or chosen category
-        card.style.display = (arrOfActiveTrue.includes(getActiveLi().dataset.categ)) ? 'block' : 'none';
+        let activeCateg = getActiveLi().dataset.categ;
+        // so, verify card if this starter-pack block have '0' or chosen category
+        $('.card-starter-pack').forEach(starterPackBlock => {
+            // if active category is '0' (all), all starter-pack blocks will have 'none' display
+            if(activeCateg === '0') {
+                starterPackBlock.style.display = 'none';
+            } else {
+                starterPackBlock.style.display = starterPackBlock.dataset.cardcateg === activeCateg ? 'block' : 'none';
+            }
+        });
+        card.style.display = (arrOfActiveTrue.includes(activeCateg)) ? 'block' : 'none';
     });
 };
+// '0' (all) is the default category because the first li have 'active' class
+verifyWithFilter();
 
 allLi.forEach(li => {
     // mouse enter
     li.addEventListener('mouseenter', e => {
+        e.preventDefault();
         childBar.setAttribute("style", `width: ${li.clientWidth}px; left: ${li.offsetLeft}px;`);
     });
 
     // mouse leave
     li.addEventListener('mouseleave', e => {
-        setAttributeToActive();
+        e.preventDefault();
+        setBarStyle();
     });
 
     li.addEventListener('click', e => {
+        e.preventDefault();
         // add 'active' class to selected
         getActiveLi().classList.remove('active');
         li.classList.add('active');
-        verify();
+        verifyWithFilter();
         // remove "no results" if there are result
         $('#no-result-message').classList.remove('on');
     })
 });
 
 // ---------------------------------------- research input ----------------------------------------
-const formSubmit = () => {
+const formSubmit = (event) => {
+    event.preventDefault();
+    // remove 'active' if user select other category than 'all'
     getActiveLi().classList.remove('active');
+    // so, update to 'all' category
     const activeCateg = $('div.categorize-of-projects > ul > li')[0];
     activeCateg.className = 'active';
-    verify();
-    setAttributeToActive();
+    verifyWithFilter();
+    setBarStyle();
     // this is a test
     const allBlocks = [], allBlockDisplay = [];
     $('.card-project.card-default-properties').forEach(block => {
@@ -110,7 +125,7 @@ const formSubmit = () => {
     const word = $('form.search-block.card-default-properties > input').value;
     let result, textInBlock;
     allBlocks.forEach(block => {
-        // parent > div.card-title-content > h3
+        // textInBlock = parent > div.card-title-content > h3.innerHTML
         textInBlock = block.children[0].children[1].children[0].innerHTML;
         // use algorien to have % similarity between research word and block h3 value
         result = algorien.search(word, textInBlock);
@@ -122,6 +137,12 @@ const formSubmit = () => {
     // display "no result"
     allBlockDisplay.every((x) => {return x === "none"}) ? $('#no-result-message').classList.add('on') : $('#no-result-message').classList.remove('on');
 }
+
+// ---------------------------------------- scroll reveal -----------------------------------------
+/*
+const sr = ScrollReveal();
+sr.reveal('div', { origin: 'bottom', distance: '50px', delay: 600, duration: 1000, });
+*/
 
 // --------------------------------------- window functions ---------------------------------------
 window.onload = (() => {
