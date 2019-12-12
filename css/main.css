@@ -461,7 +461,7 @@ div.card-starter-pack > h3 {
 .card-starter-pack-img-content {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px;
 }
 .card-starter-pack-img-content > a {
