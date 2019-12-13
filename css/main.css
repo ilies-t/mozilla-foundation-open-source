@@ -89,6 +89,8 @@ p {
     font-style: normal;
     margin-bottom: 30px;
     font-size: 23.5px;
+    line-height: 150%;
+    text-align: justify;
 }
 .contenant {
     display: flex;
@@ -418,7 +420,7 @@ div.categorize-of-projects > ul > li.active {
 }
 .card-project > h4 {
     margin-top: 10px;
-    height: 145px;
+    height: 175px;
     font-size: 19px;
     overflow: hidden;
 }
