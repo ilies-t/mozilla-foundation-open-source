@@ -13,4 +13,4 @@ This One page give a little presentation of what is open-source, presents some o
 | Name                | Integration | Design | Animation JS | Pull request
 | :------------------ | :---:       | :--:   | :---:        | :--:
 | Ilies               | 2           | 1      | 2            | 2
-| Pierre-Emmanuel     | 2           | 2      | 1            | 1
+| Pierre-Emmanuel     | 1           | 2      | 1            | 1
