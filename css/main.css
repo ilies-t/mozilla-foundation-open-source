@@ -10,7 +10,7 @@
     --primary: #FFF;
     --secondary: #000;
     --tertiary: #e7e5e2;
-    --quaternary: #00FFFF;
+    --quaternary: #ff4f5e;
     --quinary: #FFF44F;
     --senary: #54FFBD;
 }
@@ -30,6 +30,7 @@ h1 span, h3.TBfont {
     background: var(--primary);
 }
 h2 {
+    display: inline;
     position: relative;
     width: fit-content;
     font-family: 'Zilla Slab';
@@ -37,19 +38,10 @@ h2 {
     font-style: normal;
     font-size: 32px;
     margin-bottom: 25px;
+    box-shadow: inset 0px -10px 0 0 var(--quaternary);
 }
-h2::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 100%;
-    height: 70%;
-    background-color: var(--quaternary);
-    z-index: -1;
-}
-h2#section-title-2::before { background-color: var(--senary); }
-h2#section-title-3::before { background-color: var(--quinary); }
+h2#section-title-2 { box-shadow: inset 0px -10px 0 0 var(--senary); }
+h2#section-title-3 { box-shadow: inset 0px -10px 0 0 var(--quinary); }
 h3:not(.TBfont) {
     font-family: 'Zilla Slab';
     font-style: normal;
@@ -88,7 +80,7 @@ p {
     font-weight: 500;
     font-style: normal;
     margin-bottom: 30px;
-    font-size: 23.5px;
+    font-size: 21.5px;
     line-height: 150%;
     text-align: justify;
 }
@@ -207,7 +199,7 @@ section{
 
 /* scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    display: none;
 }
 ::-webkit-scrollbar-track {
     display: none;
@@ -397,17 +389,11 @@ div.categorize-of-projects > ul > li.active {
     position: relative;
     width: 100%;
     padding: 10px;
+    padding-left: 5%;
     margin-top: 15px;
     padding-bottom: 20px;
     overflow-x: scroll;
-}
-.project-container-border-effect {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 75px;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    overflow-y: hidden;
 }
 .card-project {
     width: 320px;

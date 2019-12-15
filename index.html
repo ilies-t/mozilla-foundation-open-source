@@ -81,8 +81,8 @@
     </section>
 
     <!-- here some tools -->
-    <section class="padding-default">
-        <h2 id="section-title-2">Here some open-source software</h2>
+    <section class="padding-default" style="margin-bottom: 10px;">
+        <h2 id="section-title-2">Download free open-source software</h2>
         <div class="categorize-of-projects">
             <div class="categorize-bar" id="parent-categbar"></div>
             <div class="categorize-bar" id="child-categbar"></div>
@@ -95,222 +95,220 @@
                 <li data-categ="5">E-mail</li>
             </ul>
         </div>
-        <form onsubmit="formSubmit(event); return false;" class="search-block card-default-properties">
+        <form onsubmit="return false;" class="search-block card-default-properties">
             <img src="./dist/images/icons/search.svg" alt="">
-            <input type="text" placeholder="Research a tool...">
+            <input type="text" placeholder="Research a tool..." onkeyup="formSubmit(this.value);">
         </form>
-        <div style="position: relative;">
-            <div class="projects-container" id="render">
-                <!-- start | starter-pack cards -->
-                <div class="card-starter-pack card-default-properties" data-cardcateg="1">
-                    <h3>Starter pack "Design"</h3>
-                    <div class="card-starter-pack-img-content">
-                        <a href="https://mozilla.github.io/pdf.js" target="_blank" rel="noopener nofollow" title="Visit PDF.js">
-                            <img src="./dist/images/brands/pdf_js.svg" alt="PDF.js logo">
-                        </a>
-                        <a href="https://hubs.mozilla.com/spoke" target="_blank" rel="noopener nofollow" title="Visit Spoke">
-                            <img src="./dist/images/brands/spoke.png" alt="Spoke logo">
-                        </a>
-                        <a href="https://github.com/mozilla/apps-design" target="_blank" rel="noopener nofollow" title="Visit apps-design">
-                            <img src="./dist/images/brands/unknow.svg" alt="apps-design logo">
-                        </a>
-                    </div>
-                </div>
-                <!-- start | à finir -->
-                <div class="card-starter-pack card-default-properties" data-cardcateg="2">
-                    <h3>Starter pack "Internet"</h3>
-                    <div class="card-starter-pack-img-content">
-                        <a href="https://www.mozilla.org/firefox/new" target="_blank" rel="noopener nofollow" title="Visit Mozilla Firefox">
-                            <img src="./dist/images/brands/mozilla-firefox.svg" alt="Mozilla Firefox logo">
-                        </a>
-                        <a href="https://voice.mozilla.org" target="_blank" rel="noopener nofollow" title="Visit Common Voice">
-                            <img src="./dist/images/brands/common-voice.svg" alt="Common Voice logo">
-                        </a>
-                    </div>
-                </div>
-                <div class="card-starter-pack card-default-properties" data-cardcateg="3">
-                    <h3>Starter pack "Developement"</h3>
-                    <div class="card-starter-pack-img-content">
-                        <a href="https://filezilla-project.org/download.php" target="_blank" rel="noopener nofollow" title="Visit FileZilla">
-                            <img src="./dist/images/brands/filezilla.svg" alt="FileZilla logo">
-                        </a>
-                        <a href="https://www.rust-lang.org/tools/install" target="_blank" rel="noopener nofollow" title="Visit Rust">
-                            <img src="./dist/images/brands/rust.svg" alt="Rust logo">
-                        </a>
-                    </div>
-                </div>
-                <div class="card-starter-pack card-default-properties" data-cardcateg="4">
-                    <h3>Starter pack "Security"</h3>
-                    <div class="card-starter-pack-img-content">
-                        <a href="https://keepass.info/" target="_blank" rel="noopener nofollow" title="Visit KeePass">
-                            <img src="./dist/images/brands/keepass.svg" alt="KeePass logo">
-                        </a>
-                        <a href="https://monitor.firefox.com/" target="_blank" rel="noopener nofollow" title="Visit Firefox Monitor">
-                            <img src="./dist/images/brands/firefox-monitor.svg" alt="Firefox Monitor logo">
-                        </a>
-                    </div>
-                </div>
-                <div class="card-starter-pack card-default-properties" data-cardcateg="5">
-                    <h3>Starter pack "E-mail"</h3>
-                    <div class="card-starter-pack-img-content">
-                        <a href="https://www.thunderbird.net/" target="_blank" rel="noopener nofollow" title="Visit Mozilla Thunderbird">
-                            <img src="./dist/images/brands/mozilla-thunderbird.svg" alt="Mozilla Thunderbird logo">
-                        </a>
-                    </div>
-                </div>
-                <!-- start | à finir -->
-                <!-- end | starter-pack cards -->
-
-                <!-- start | generated with pug : https://codepen.io/i-t/pen/qBEboJN -->
-                <div class="card-project card-default-properties" data-cardcateg="2">
-                    <div><img src="./dist/images/brands/mozilla-firefox.svg" alt="Mozilla Firefox logo">
-                    <div class="card-title-content">
-                    <h3>Mozilla Firefox</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to Google Chrome</h5>
-                    <h4>Firefox is a Web browser that is smaller, faster, and in some ways more secure than the Mozilla browser from which much of its code was originally derived.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/notPd.svg" alt="no"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://www.mozilla.org/firefox/new" target="_blank" rel="noopener nofollow" title="Use Mozilla Firefox">Use it</a><a class="button-2" href="https://github.com/mozilla/geckodriver" target="_blank" rel="noopener nofollow" title="Visit Mozilla Firefox">More</a></div>
-                </div>
-                <div class="card-project card-default-properties" data-cardcateg="2">
-                    <div><img src="./dist/images/brands/common-voice.svg" alt="Common Voice logo">
-                    <div class="card-title-content">
-                    <h3>Common Voice</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to Google Cloud Speech-to-Text</h5>
-                    <h4>Common Voice is Mozilla's initiative to help teach machines how real people speak. But to create voice systems, developers need an extremely large amount of voice data.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://voice.mozilla.org" target="_blank" rel="noopener nofollow" title="Use Common Voice">Use it</a><a class="button-2" href="https://github.com/mozilla/voice-web" target="_blank" rel="noopener nofollow" title="Visit Common Voice">More</a></div>
-                </div>
-                <div class="card-project card-default-properties" data-cardcateg="3">
-                    <div><img src="./dist/images/brands/filezilla.svg" alt="FileZilla logo">
-                    <div class="card-title-content">
-                    <h3>FileZilla</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to WinSCP</h5>
-                    <h4>FileZilla Client is a fast and reliable cross-platform FTP, FTPS and SFTP client with lots of useful features and an intuitive graphical user interface.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://filezilla-project.org/download.php" target="_blank" rel="noopener nofollow" title="Use FileZilla">Use it</a><a class="button-2" href="https://github.com/basvodde/filezilla" target="_blank" rel="noopener nofollow" title="Visit FileZilla">More</a></div>
-                </div>
-                <div class="card-project card-default-properties" data-cardcateg="3">
-                    <div><img src="./dist/images/brands/rust.svg" alt="Rust logo">
-                    <div class="card-title-content">
-                    <h3>Rust</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to Go</h5>
-                    <h4>A language empowering everyone to build reliable and efficient software.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://www.rust-lang.org/tools/install" target="_blank" rel="noopener nofollow" title="Use Rust">Use it</a><a class="button-2" href="https://github.com/rust-lang/rust" target="_blank" rel="noopener nofollow" title="Visit Rust">More</a></div>
-                </div>
-                <div class="card-project card-default-properties" data-cardcateg="4">
-                    <div><img src="./dist/images/brands/keepass.svg" alt="KeePass logo">
-                    <div class="card-title-content">
-                    <h3>KeePass</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to Dashlane</h5>
-                    <h4>KeePass is a free open source password manager, which helps you to manage your passwords in a secure way.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://keepass.info/" target="_blank" rel="noopener nofollow" title="Use KeePass">Use it</a><a class="button-2" href="https://github.com/keepassx/keepassx" target="_blank" rel="noopener nofollow" title="Visit KeePass">More</a></div>
-                </div>
-                <div class="card-project card-default-properties" data-cardcateg="5">
-                    <div><img src="./dist/images/brands/mozilla-thunderbird.svg" alt="Mozilla Thunderbird logo">
-                    <div class="card-title-content">
-                    <h3>Mozilla Thunderbird</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img class="star-off" src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to Mailbird</h5>
-                    <h4>Thunderbird is a free and open source email, newsfeed, chat, and calendaring client, that’s easy to set up and customize.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/notPd.svg" alt="no"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://www.thunderbird.net/" target="_blank" rel="noopener nofollow" title="Use Mozilla Thunderbird">Use it</a><a class="button-2" href="https://github.com/flathub/org.mozilla.Thunderbird" target="_blank" rel="noopener nofollow" title="Visit Mozilla Thunderbird">More</a></div>
-                </div>
-                <div class="card-project card-default-properties" data-cardcateg="1">
-                    <div><img src="./dist/images/brands/pdf_js.svg" alt="PDF.js logo">
-                    <div class="card-title-content">
-                    <h3>PDF.js</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to ViewerJs</h5>
-                    <h4>PDF.js is community-driven and supported by Mozilla Labs. Our goal is to create a general-purpose, web standards-based platform for parsing and rendering PDFs.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/notPd.svg" alt="no"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://mozilla.github.io/pdf.js" target="_blank" rel="noopener nofollow" title="Use PDF.js">Use it</a><a class="button-2" href="https://github.com/mozilla/pdf.js" target="_blank" rel="noopener nofollow" title="Visit PDF.js">More</a></div>
-                </div>
-                <div class="card-project card-default-properties" data-cardcateg="4">
-                    <div><img src="./dist/images/brands/firefox-monitor.svg" alt="Firefox Monitor logo">
-                    <div class="card-title-content">
-                    <h3>Firefox Monitor</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to Have I been pwned</h5>
-                    <h4>Firefox Monitor warns you if your online accounts were involved in a known data breach. See if your information was exposed in a data breach.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://monitor.firefox.com/" target="_blank" rel="noopener nofollow" title="Use Firefox Monitor">Use it</a><a class="button-2" href="https://github.com/mozilla/blurts-server" target="_blank" rel="noopener nofollow" title="Visit Firefox Monitor">More</a></div>
-                </div>
-                    <div class="card-project card-default-properties" data-cardcateg="1">
-                    <div><img src="./dist/images/brands/spoke.png" alt="Spoke logo">
-                    <div class="card-title-content">
-                    <h3>Spoke</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to Jira Service Desk</h5>
-                    <h4>Explore images, videos, and 3D models from around the web, all without opening up a new tab. With media integrations from Sketchfab and Google Poly, you'll be on your way to creating a scene in no time.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://hubs.mozilla.com/spoke" target="_blank" rel="noopener nofollow" title="Use Spoke">Use it</a><a class="button-2" href="https://github.com/mozilla/Spoke" target="_blank" rel="noopener nofollow" title="Visit Spoke">More</a></div>
-                </div>
-                <div class="card-project card-default-properties" data-cardcateg="1">
-                    <div><img src="./dist/images/brands/unknow.svg" alt="apps-design logo">
-                    <div class="card-title-content">
-                    <h3>apps-design</h3>
-                    <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
-                    </div>
-                    </div>
-                    </div>
-                    <h5>Alternative to Material design</h5>
-                    <h4>Design Guidelines for Open Web Apps.</h4>
-                    <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
-                    </div>
-                    <div class="button-container"><a class="button-1" href="https://github.com/mozilla/apps-design" target="_blank" rel="noopener nofollow" title="Use apps-design">Use it</a><a class="button-2" href="https://github.com/mozilla/apps-design" target="_blank" rel="noopener nofollow" title="Visit apps-design">More</a></div>
+    </section>
+    <div style="position: relative; margin-bottom: 50px;">
+        <div class="projects-container" id="render">
+            <!-- start | starter-pack cards -->
+            <div class="card-starter-pack card-default-properties" data-cardcateg="1">
+                <h3>Starter pack "Design"</h3>
+                <div class="card-starter-pack-img-content">
+                    <a href="https://mozilla.github.io/pdf.js" target="_blank" rel="noopener nofollow" title="Visit PDF.js">
+                        <img src="./dist/images/brands/pdf_js.svg" alt="PDF.js logo">
+                    </a>
+                    <a href="https://hubs.mozilla.com/spoke" target="_blank" rel="noopener nofollow" title="Visit Spoke">
+                        <img src="./dist/images/brands/spoke.png" alt="Spoke logo">
+                    </a>
+                    <a href="https://github.com/mozilla/apps-design" target="_blank" rel="noopener nofollow" title="Visit apps-design">
+                        <img src="./dist/images/brands/unknow.svg" alt="apps-design logo">
+                    </a>
                 </div>
             </div>
-            <!-- end | generated with pug : https://codepen.io/i-t/pen/qBEboJN -->
-        <div class="project-container-border-effect"></div>
-        <div id="no-result-message">
-            <img src="./dist/images/interface/notFound.png" alt="Not found results" style="height: 200px">
-            <span>No results found...</span>
+            <div class="card-starter-pack card-default-properties" data-cardcateg="2">
+                <h3>Starter pack "Internet"</h3>
+                <div class="card-starter-pack-img-content">
+                    <a href="https://www.mozilla.org/firefox/new" target="_blank" rel="noopener nofollow" title="Visit Mozilla Firefox">
+                        <img src="./dist/images/brands/mozilla-firefox.svg" alt="Mozilla Firefox logo">
+                    </a>
+                    <a href="https://voice.mozilla.org" target="_blank" rel="noopener nofollow" title="Visit Common Voice">
+                        <img src="./dist/images/brands/common-voice.svg" alt="Common Voice logo">
+                    </a>
+                </div>
+            </div>
+            <div class="card-starter-pack card-default-properties" data-cardcateg="3">
+                <h3>Starter pack "Developement"</h3>
+                <div class="card-starter-pack-img-content">
+                    <a href="https://filezilla-project.org/download.php" target="_blank" rel="noopener nofollow" title="Visit FileZilla">
+                        <img src="./dist/images/brands/filezilla.svg" alt="FileZilla logo">
+                    </a>
+                    <a href="https://www.rust-lang.org/tools/install" target="_blank" rel="noopener nofollow" title="Visit Rust">
+                        <img src="./dist/images/brands/rust.svg" alt="Rust logo">
+                    </a>
+                </div>
+            </div>
+            <div class="card-starter-pack card-default-properties" data-cardcateg="4">
+                <h3>Starter pack "Security"</h3>
+                <div class="card-starter-pack-img-content">
+                    <a href="https://keepass.info/" target="_blank" rel="noopener nofollow" title="Visit KeePass">
+                        <img src="./dist/images/brands/keepass.svg" alt="KeePass logo">
+                    </a>
+                    <a href="https://monitor.firefox.com/" target="_blank" rel="noopener nofollow" title="Visit Firefox Monitor">
+                        <img src="./dist/images/brands/firefox-monitor.svg" alt="Firefox Monitor logo">
+                    </a>
+                </div>
+            </div>
+            <div class="card-starter-pack card-default-properties" data-cardcateg="5">
+                <h3>Starter pack "E-mail"</h3>
+                <div class="card-starter-pack-img-content">
+                    <a href="https://www.thunderbird.net/" target="_blank" rel="noopener nofollow" title="Visit Mozilla Thunderbird">
+                        <img src="./dist/images/brands/mozilla-thunderbird.svg" alt="Mozilla Thunderbird logo">
+                    </a>
+                </div>
+            </div>
+            <!-- end | starter-pack cards -->
+
+            <!-- start | generated with pug : https://codepen.io/i-t/pen/qBEboJN -->
+            <div class="card-project card-default-properties" data-cardcateg="2">
+                <div><img src="./dist/images/brands/mozilla-firefox.svg" alt="Mozilla Firefox logo">
+                <div class="card-title-content">
+                <h3>Mozilla Firefox</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to Google Chrome</h5>
+                <h4>Firefox is a Web browser that is smaller, faster, and in some ways more secure than the Mozilla browser from which much of its code was originally derived.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/notPd.svg" alt="no"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://www.mozilla.org/firefox/new" target="_blank" rel="noopener nofollow" title="Download Mozilla Firefox">Download</a><a class="button-2" href="https://github.com/mozilla/geckodriver" target="_blank" rel="noopener nofollow" title="Visit Mozilla Firefox">More</a></div>
+            </div>
+            <div class="card-project card-default-properties" data-cardcateg="2">
+                <div><img src="./dist/images/brands/common-voice.svg" alt="Common Voice logo">
+                <div class="card-title-content">
+                <h3>Common Voice</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to Google Cloud Speech-to-Text</h5>
+                <h4>Common Voice is Mozilla's initiative to help teach machines how real people speak. But to create voice systems, developers need an extremely large amount of voice data.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://voice.mozilla.org" target="_blank" rel="noopener nofollow" title="Download Common Voice">Download</a><a class="button-2" href="https://github.com/mozilla/voice-web" target="_blank" rel="noopener nofollow" title="Visit Common Voice">More</a></div>
+            </div>
+            <div class="card-project card-default-properties" data-cardcateg="3">
+                <div><img src="./dist/images/brands/filezilla.svg" alt="FileZilla logo">
+                <div class="card-title-content">
+                <h3>FileZilla</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to WinSCP</h5>
+                <h4>FileZilla Client is a fast and reliable cross-platform FTP, FTPS and SFTP client with lots of useful features and an intuitive graphical user interface.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://filezilla-project.org/download.php" target="_blank" rel="noopener nofollow" title="Download FileZilla">Download</a><a class="button-2" href="https://github.com/basvodde/filezilla" target="_blank" rel="noopener nofollow" title="Visit FileZilla">More</a></div>
+            </div>
+            <div class="card-project card-default-properties" data-cardcateg="3">
+                <div><img src="./dist/images/brands/rust.svg" alt="Rust logo">
+                <div class="card-title-content">
+                <h3>Rust</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to Go</h5>
+                <h4>A language empowering everyone to build reliable and efficient software.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://www.rust-lang.org/tools/install" target="_blank" rel="noopener nofollow" title="Download Rust">Download</a><a class="button-2" href="https://github.com/rust-lang/rust" target="_blank" rel="noopener nofollow" title="Visit Rust">More</a></div>
+            </div>
+            <div class="card-project card-default-properties" data-cardcateg="4">
+                <div><img src="./dist/images/brands/keepass.svg" alt="KeePass logo">
+                <div class="card-title-content">
+                <h3>KeePass</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to Dashlane</h5>
+                <h4>KeePass is a free open source password manager, which helps you to manage your passwords in a secure way.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://keepass.info/" target="_blank" rel="noopener nofollow" title="Download KeePass">Download</a><a class="button-2" href="https://github.com/keepassx/keepassx" target="_blank" rel="noopener nofollow" title="Visit KeePass">More</a></div>
+            </div>
+            <div class="card-project card-default-properties" data-cardcateg="5">
+                <div><img src="./dist/images/brands/mozilla-thunderbird.svg" alt="Mozilla Thunderbird logo">
+                <div class="card-title-content">
+                <h3>Mozilla Thunderbird</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img class="star-off" src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to Mailbird</h5>
+                <h4>Thunderbird is a free and open source email, newsfeed, chat, and calendaring client, that’s easy to set up and customize.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/notPd.svg" alt="no"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://www.thunderbird.net/" target="_blank" rel="noopener nofollow" title="Download Mozilla Thunderbird">Download</a><a class="button-2" href="https://github.com/flathub/org.mozilla.Thunderbird" target="_blank" rel="noopener nofollow" title="Visit Mozilla Thunderbird">More</a></div>
+            </div>
+            <div class="card-project card-default-properties" data-cardcateg="1">
+                <div><img src="./dist/images/brands/pdf_js.svg" alt="PDF.js logo">
+                <div class="card-title-content">
+                <h3>PDF.js</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to ViewerJs</h5>
+                <h4>PDF.js is community-driven and supported by Mozilla Labs. Our goal is to create a general-purpose, web standards-based platform for parsing and rendering PDFs.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/notPd.svg" alt="no"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://mozilla.github.io/pdf.js" target="_blank" rel="noopener nofollow" title="Download PDF.js">Download</a><a class="button-2" href="https://github.com/mozilla/pdf.js" target="_blank" rel="noopener nofollow" title="Visit PDF.js">More</a></div>
+            </div>
+            <div class="card-project card-default-properties" data-cardcateg="4">
+                <div><img src="./dist/images/brands/firefox-monitor.svg" alt="Firefox Monitor logo">
+                <div class="card-title-content">
+                <h3>Firefox Monitor</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to Have I been pwned</h5>
+                <h4>Firefox Monitor warns you if your online accounts were involved in a known data breach. See if your information was exposed in a data breach.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://monitor.firefox.com/" target="_blank" rel="noopener nofollow" title="Download Firefox Monitor">Download</a><a class="button-2" href="https://github.com/mozilla/blurts-server" target="_blank" rel="noopener nofollow" title="Visit Firefox Monitor">More</a></div>
+            </div>
+                <div class="card-project card-default-properties" data-cardcateg="1">
+                <div><img src="./dist/images/brands/spoke.png" alt="Spoke logo">
+                <div class="card-title-content">
+                <h3>Spoke</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to Jira Service Desk</h5>
+                <h4>Explore images, videos, and 3D models from around the web, all without opening up a new tab. With media integrations from Sketchfab and Google Poly, you'll be on your way to creating a scene in no time.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://hubs.mozilla.com/spoke" target="_blank" rel="noopener nofollow" title="Download Spoke">Download</a><a class="button-2" href="https://github.com/mozilla/Spoke" target="_blank" rel="noopener nofollow" title="Visit Spoke">More</a></div>
+            </div>
+            <div class="card-project card-default-properties" data-cardcateg="1">
+                <div><img src="./dist/images/brands/unknow.svg" alt="apps-design logo">
+                <div class="card-title-content">
+                <h3>apps-design</h3>
+                <div class="stars-container"><img src="./dist/images/icons/star.svg" alt="1"><img src="./dist/images/icons/star.svg" alt="2"><img src="./dist/images/icons/star.svg" alt="3"><img src="./dist/images/icons/star.svg" alt="4"><img class="star-off" src="./dist/images/icons/star.svg" alt="5">
+                </div>
+                </div>
+                </div>
+                <h5>Alternative to Material design</h5>
+                <h4>Design Guidelines for Open Web Apps.</h4>
+                <div class="is-pd"><img src="./dist/images/icons/pd.svg" alt="yes"><span>Public domain</span>
+                </div>
+                <div class="button-container"><a class="button-1" href="https://github.com/mozilla/apps-design" target="_blank" rel="noopener nofollow" title="Download apps-design">Download</a><a class="button-2" href="https://github.com/mozilla/apps-design" target="_blank" rel="noopener nofollow" title="Visit apps-design">More</a></div>
+            </div>
         </div>
-        </div>
-    </section>
+        <!-- end | generated with pug : https://codepen.io/i-t/pen/qBEboJN -->
+
+    <div id="no-result-message">
+        <img src="./dist/images/interface/notFound.png" alt="Not found results" style="height: 200px">
+        <span>No results found...</span>
+    </div>
+    </div>
 
     <!-- about us -->
     <section class="padding-default">

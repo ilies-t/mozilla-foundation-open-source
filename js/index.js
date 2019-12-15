@@ -69,6 +69,7 @@ const verifyWithFilter = () => {
         const arrOfActiveTrue = ['0', card.dataset.cardcateg];
         let activeCateg = getActiveLi().dataset.categ;
         // so, verify card if this starter-pack block have '0' or chosen category
+
         $('.card-starter-pack').forEach(starterPackBlock => {
             // if active category is '0' (all), all starter-pack blocks will have 'none' display
             if(activeCateg === '0') {
@@ -98,60 +99,92 @@ allLi.forEach(li => {
 
     li.addEventListener('click', e => {
         e.preventDefault();
+
         // add 'active' class to selected
         getActiveLi().classList.remove('active');
         li.classList.add('active');
         verifyWithFilter();
+
         // remove "no results" if there are result
         $('#no-result-message').classList.remove('on');
     })
 });
 
 // ---------------------------------------- research input ----------------------------------------
-const formSubmit = (event) => {
-    event.preventDefault();
-    // remove 'active' if user select other category than 'all'
-    getActiveLi().classList.remove('active');
-    // so, update to 'all' category
-    const activeCateg = $('div.categorize-of-projects > ul > li')[0];
-    activeCateg.className = 'active';
-    verifyWithFilter();
-    setBarStyle();
-    // this is a test
-    const allBlocks = [], allBlockDisplay = [];
-    $('.card-project.card-default-properties').forEach(block => {
-        allBlocks.push(block);
-    });
-    const word = $('form.search-block.card-default-properties > input').value;
-    let result, textInBlock;
-    allBlocks.forEach(block => {
-        // textInBlock = parent > div.card-title-content > h3.innerHTML
-        textInBlock = block.children[0].children[1].children[0].innerHTML;
-        // use algorien to have % similarity between research word and block h3 value
-        result = algorien.search(word, textInBlock);
-        // if similarity is superior to 15%, block will have 'block' display
-        block.style.display = (result >= 15.01) ? 'block' : 'none';
-        allBlockDisplay.push(block.style.display);
-    });
 
-    // display "no result"
-    allBlockDisplay.every((x) => {return x === "none"}) ? $('#no-result-message').classList.add('on') : $('#no-result-message').classList.remove('on');
-}
+const formSubmit = (inputValue) => {
+    // add all blocks state (diaply) into an array like a database to compare
+    const allBlockDisplay = [];
 
-// ---------------------------------------- scroll reveal -----------------------------------------
-/*
-const sr = ScrollReveal();
-sr.reveal('div', { origin: 'bottom', distance: '50px', delay: 600, duration: 1000, });
-*/
+    // display "no result" if all block have display 'none'
+    const isAllBlocksHidden = () => {
+        allBlockDisplay.every((x) => {return x === "none"}) ? $('#no-result-message').classList.add('on') : $('#no-result-message').classList.remove('on');
+    };
+
+    if(inputValue.length > 2) {
+        // remove 'active' if user select other category than 'all'
+        getActiveLi().classList.remove('active');
+
+        // so, update to 'all' category
+        const activeCateg = $('div.categorize-of-projects > ul > li')[0];
+        activeCateg.className = 'active';
+        verifyWithFilter();
+        setBarStyle();
+
+        const word = inputValue;
+        let result, textInBlock;
+        $('.card-project.card-default-properties').forEach(block => {
+            // textInBlock = parent > div.card-title-content > h3.innerHTML
+            textInBlock = block.children[0].children[1].children[0].innerHTML;
+
+            // use algorien to have % similarity between research word and block h3 value
+            result = algorien.search(word, textInBlock);
+
+            // if similarity is superior to 15%, block will have 'block' display
+            block.style.display = (result >= 15.01) ? 'block' : 'none';
+            allBlockDisplay.push(block.style.display);
+        });
+        isAllBlocksHidden();
+    }
+    switch(inputValue.length) {
+        case(0):
+            $('.card-project.card-default-properties').forEach(block => {
+                block.style.display = 'block';
+                allBlockDisplay.push(block.style.display);
+            });
+            isAllBlocksHidden();
+            break;
+    };
+};
 
 // --------------------------------------- window functions ---------------------------------------
 window.onload = (() => {
     resizeParentBySize($('.TBfont')[0], $('.TBfont')[0].parentNode);
     setTimeout(() => {
+        // loader
         $('header').classList.remove('onload');
         $('body').classList.remove('block-scroll');
         $('div#loader-container').classList.add('off-load');
-    }, 750);
+
+        // scroll reveal
+        const sr = ScrollReveal(),
+              defaultSR = [
+                'h1', 'h2', 'p',
+                'ul', '.button-3', 'div.projects-container',
+                'div#read-manifesto-container', 'h6', 'footer' ],
+              del = 350,
+              dur = 1000;
+
+        defaultSR.forEach((item) => {
+            sr.reveal(item, { origin: 'bottom', distance: '50px', delay: del, duration: dur });
+        });
+        sr.reveal('img#main-absolute-image', { origin: 'right', distance: '125px', delay: del+250, duration: dur });
+        sr.reveal('a#scrollable-button', { origin: 'top', distance: '75px', delay: del, duration: dur, });
+        sr.reveal('iframe', { distance: '50px', delay: del, duration: dur, scale: 0.5 });
+        sr.reveal('form', { distance: '10px', delay: del, duration: dur, scale: 0.75 });
+        sr.reveal('div#parent-categbar', { distance: '50px', delay: del, duration: dur });
+        sr.reveal('div#child-categbar', { distance: '50px', delay: del, duration: dur });
+    }, 100);
 });
 window.onresize = (() => {
     resizeParentBySize($('.TBfont')[0], $('.TBfont')[0].parentNode);
