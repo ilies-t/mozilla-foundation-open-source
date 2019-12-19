@@ -36,6 +36,19 @@ setTimeout(() => {
     anim();
 }, 2500);
 
+// ----------------------------------------- video player -----------------------------------------
+const videoSelection = $('#video-play-on-load')
+
+// mouse enter
+videoSelection.addEventListener('mouseenter', e => {
+    videoSelection.muted = false;
+});
+
+// mouse leave
+videoSelection.addEventListener('mouseleave', e => {
+    videoSelection.muted = true;
+});
+
 // ------------------------------------------- research -------------------------------------------
 const childBar = $('#child-categbar'),
       allLi = $('div.categorize-of-projects > ul > li'),
@@ -111,7 +124,6 @@ allLi.forEach(li => {
 });
 
 // ---------------------------------------- research input ----------------------------------------
-
 const formSubmit = (inputValue) => {
     // add all blocks state (diaply) into an array like a database to compare
     const allBlockDisplay = [];
@@ -180,7 +192,7 @@ window.onload = (() => {
         });
         sr.reveal('img#main-absolute-image', { origin: 'right', distance: '125px', delay: del+250, duration: dur });
         sr.reveal('a#scrollable-button', { origin: 'top', distance: '75px', delay: del, duration: dur, });
-        sr.reveal('iframe', { distance: '50px', delay: del, duration: dur, scale: 0.5 });
+        sr.reveal('video', { distance: '50px', delay: del, duration: dur, scale: 0.5 });
         sr.reveal('form', { distance: '10px', delay: del, duration: dur, scale: 0.75 });
         sr.reveal('div#parent-categbar', { distance: '50px', delay: del, duration: dur });
         sr.reveal('div#child-categbar', { distance: '50px', delay: del, duration: dur });

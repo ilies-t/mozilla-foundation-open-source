@@ -32,7 +32,7 @@ h1 span, h3.TBfont {
 h2 {
     display: inline;
     position: relative;
-    width: fit-content;
+    width: max-content;
     font-family: 'Zilla Slab';
     font-weight: bold;
     font-style: normal;
@@ -83,6 +83,12 @@ p {
     font-size: 21.5px;
     line-height: 150%;
     text-align: justify;
+}
+video {
+    width: 100%;
+}
+video:hover {
+    cursor: pointer;
 }
 .contenant {
     display: flex;
@@ -311,11 +317,6 @@ img#main-absolute-image {
 }
 .button-container-main > a:hover > img{
     margin-top: 15%;
-}
-
-/* what is open-source */
-iframe{
-    width: 100%;
 }
 
 /* here some tools */
